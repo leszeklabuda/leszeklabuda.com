@@ -1,0 +1,69 @@
+# Turn off trailing slash redirects
+DirectorySlash Off
+
+# Disable directory browsing
+Options All -Indexes
+
+# ----------------------------------------------------------------------
+# Rewrite engine
+# ----------------------------------------------------------------------
+
+# Turning on the rewrite engine is necessary for the following rules and features.
+# FollowSymLinks must be enabled for this to work.
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+
+	# Rewrite "www.leszeklabuda.com -> "leszeklabuda.com"
+	RewriteCond %{HTTPS} !=on
+	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+	RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+	RewriteCond %{HTTPS} =on
+	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+	RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+	# Force "https"
+	RewriteCond %{HTTPS} !=on
+	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+	# Remove trailing slash
+	# RewriteCond %{REQUEST_FILENAME} !-d	# must be if "DirectorySlash Off" not used
+	RewriteCond %{REQUEST_URI} /(.+)/$
+	RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
+
+	# Checks to see if the user is attempting to access a valid file,
+	# such as an image or css document, if this isn't true it sends the
+	# request to the front controller, index.php
+	RewriteCond %{REQUEST_FILENAME} !-f
+	# RewriteCond %{REQUEST_FILENAME} !-d 	# must be if "DirectorySlash Off" not used
+	RewriteRule ^ index.php [QSA,L]
+
+	# Ensure Authorization header is passed along
+	RewriteCond %{HTTP:Authorization} .
+	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+	# If we don't have mod_rewrite installed, all 404's
+	# can be sent to index.php, and everything works as normal.
+	ErrorDocument 404 index.php
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+
+
+# Disable browser caching with meta HTML tags
+	Header set Cache-Control "no-cache, no-store, must-revalidate"
+	Header set Pragma "no-cache"
+	Header set Expires 0
+</IfModule>
+
+# httpd.conf: LoadModule expires_module modules/mod_expires.so
+ExpiresActive On
+ExpiresDefault "modification"
+
+# Disable server signature start
+	# ServerSignature Off
+# Disable server signature end

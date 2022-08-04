@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    // text-rendering: optimizeSpeed;
+    font-family: var(--font-body);
+    font-size: var(--font-size);
+    line-height: var(--font-line-height);
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: inline-block;
+    height: 1.5em;
+    // line-height: 1em;
+    // vertical-align: -0.15em;
+    padding-bottom: 0.1em;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+:focus {
+    outline: none;
+}

@@ -1,0 +1,936 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size);
+    line-height: var(--font-line-height);
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: inline-block;
+    height: 1.5em;
+    padding-bottom: 0.1em;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+:focus {
+    outline: none;
+}
+
+h1,
+.h1 {
+    font-size: 2rem;
+}
+
+h2,
+.h2 {
+    font-size: 1.5rem;
+}
+
+h3,
+.h3 {
+    font-size: 1.17rem;
+}
+
+h4,
+.h4 {
+    font-size: 1rem;
+}
+
+h5,
+.h5 {
+    font-size: 0.83rem;
+}
+
+h6,
+.h6 {
+    font-size: 0.67rem;
+}
+
+:root,
+.light {
+    --text-primary: hsl(0deg, 0%, 0%);
+    --text-secondary: hsl(0deg, 0%, 30%);
+    --text-link: hsl(240deg, 100%, 73%);
+    --background-primary: hsl(0deg, 0%, 100%);
+    --background-secondary: hsl(0deg, 0%, 95%);
+    --border-primary: hsl(0deg, 0%, 80%);
+    --border-secondary: hsl(0deg, 0%, 88%);
+    --icon-primary: hsl(0deg, 0%, 0%);
+    --button-background-hover: hsl(0deg, 0%, 80%);
+    --logo-primary: hsl(221deg, 43%, 47%);
+    --logo-secondary: hsl(224deg, 74%, 70%);
+    --logo-underscore: hsla(0deg, 0%, 0%, 0.7);
+    --link-primary: hsl(224deg, 100%, 50%);
+    --link-visited-primary: hsl(224deg, 43%, 50%);
+    --link-hover-primary: hsl(224deg, 100%, 70%);
+    --border-form: hsl(0deg, 0%, 90%);
+    --canvas-form: hsla(0deg, 0%, 50%, 0.07);
+    --canvas-notice: hsla(120deg, 25%, 55%, 0.1);
+    --canvas-error: hsla(0deg, 79%, 69%, 0.1);
+    --border-notice: hsl(120deg, 25%, 75%);
+    --border-error: hsl(0deg, 79%, 75%);
+    --border-form-active: hsla(221, 43%, 47%, 0.7);
+}
+
+.dark {
+    --text-primary: hsl(0deg, 0%, 100%);
+    --text-secondary: hsl(0deg, 0%, 93%);
+    --text-link: hsl(240deg, 100%, 73%);
+    --background-primary: hsl(0deg, 0%, 0%);
+    --background-secondary: hsl(0deg, 0%, 20%);
+    --border-primary: hsl(0deg, 0%, 61%);
+    --border-secondary: hsl(0deg, 0%, 40%);
+    --icon-primary: hsl(0deg, 0%, 100%);
+    --button-background-hover: hsl(0deg, 0%, 47%);
+    --logo-primary: hsl(221deg, 43%, 47%);
+    --logo-secondary: hsl(224deg, 74%, 70%);
+    --logo-underscore: hsl(0deg, 0%, 100%);
+    --link-primary: hsl(224deg, 100%, 70%);
+    --link-visited-primary: hsl(224deg, 43%, 50%);
+    --link-hover-primary: hsl(224deg, 100%, 80%);
+    --border-form: hsl(0deg, 0%, 27%);
+    --canvas-form: hsla(0deg, 0%, 50%, 0.27);
+    --canvas-notice: hsla(120deg, 25%, 55%, 0.3);
+    --canvas-error: hsla(0deg, 79%, 69%, 0.3);
+    --border-notice: hsl(120deg, 25%, 25%);
+    --border-error: hsl(0deg, 79%, 25%);
+    --border-form-active: hsla(221, 43%, 47%, 0.7);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-primary: hsl(0deg, 0%, 0%);
+        --text-secondary: hsl(0deg, 0%, 30%);
+        --text-link: hsl(240deg, 100%, 73%);
+        --background-primary: hsl(0deg, 0%, 100%);
+        --background-secondary: hsl(0deg, 0%, 95%);
+        --border-primary: hsl(0deg, 0%, 80%);
+        --border-secondary: hsl(0deg, 0%, 88%);
+        --icon-primary: hsl(0deg, 0%, 0%);
+        --button-background-hover: hsl(0deg, 0%, 80%);
+        --logo-primary: hsl(221deg, 43%, 47%);
+        --logo-secondary: hsl(224deg, 74%, 70%);
+        --logo-underscore: hsla(0deg, 0%, 0%, 0.7);
+        --link-primary: hsl(224deg, 100%, 50%);
+        --link-visited-primary: hsl(224deg, 43%, 50%);
+        --link-hover-primary: hsl(224deg, 100%, 70%);
+        --border-form: hsl(0deg, 0%, 90%);
+        --canvas-form: hsla(0deg, 0%, 50%, 0.07);
+        --canvas-notice: hsla(120deg, 25%, 55%, 0.1);
+        --canvas-error: hsla(0deg, 79%, 69%, 0.1);
+        --border-notice: hsl(120deg, 25%, 75%);
+        --border-error: hsl(0deg, 79%, 75%);
+        --border-form-active: hsla(221, 43%, 47%, 0.7);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: hsl(0deg, 0%, 100%);
+        --text-secondary: hsl(0deg, 0%, 93%);
+        --text-link: hsl(240deg, 100%, 73%);
+        --background-primary: hsl(0deg, 0%, 0%);
+        --background-secondary: hsl(0deg, 0%, 20%);
+        --border-primary: hsl(0deg, 0%, 61%);
+        --border-secondary: hsl(0deg, 0%, 40%);
+        --icon-primary: hsl(0deg, 0%, 100%);
+        --button-background-hover: hsl(0deg, 0%, 47%);
+        --logo-primary: hsl(221deg, 43%, 47%);
+        --logo-secondary: hsl(224deg, 74%, 70%);
+        --logo-underscore: hsl(0deg, 0%, 100%);
+        --link-primary: hsl(224deg, 100%, 70%);
+        --link-visited-primary: hsl(224deg, 43%, 50%);
+        --link-hover-primary: hsl(224deg, 100%, 80%);
+        --border-form: hsl(0deg, 0%, 27%);
+        --canvas-form: hsla(0deg, 0%, 50%, 0.27);
+        --canvas-notice: hsla(120deg, 25%, 55%, 0.3);
+        --canvas-error: hsla(0deg, 79%, 69%, 0.3);
+        --border-notice: hsl(120deg, 25%, 25%);
+        --border-error: hsl(0deg, 79%, 25%);
+        --border-form-active: hsla(221, 43%, 47%, 0.7);
+    }
+}
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--background-primary);
+}
+
+.page-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.header-wrapper {
+    width: 100%;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+}
+
+.main-wrapper {
+    width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+@media screen and (min-width: 769px) {
+    .main-wrapper {
+        padding-left: 1.5rem;
+        padding-right: 3rem;
+    }
+}
+@media screen and (min-width: 992px) {
+    .main-wrapper {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.main-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+}
+.main-content article {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.footer-wrapper {
+    width: 100%;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+.footer-wrapper .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    padding: 0.25rem;
+    gap: 0.25rem;
+}
+
+.repository-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 1rem;
+}
+
+.copyright {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+
+.logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-weight: 400;
+}
+
+.logo svg {
+    height: 1.75rem;
+}
+
+.logo-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.link {
+    color: var(--link-primary);
+}
+.link:visited {
+    color: var(--link-visited-primary);
+}
+.link:focus, .link:hover {
+    color: var(--link-hover-primary);
+    border-bottom: 2px solid var(--link-hover-primary);
+}
+.link.strong {
+    font-weight: bold;
+}
+
+.link-container {
+    margin: 1rem auto;
+}
+
+.top-navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-bottom: 1px solid var(--border-secondary);
+}
+.top-navigation * {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.top-navigation .main-menu-toggle {
+    width: 2rem;
+    height: 2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.top-navigation.show > .main-menu-toggle {
+    border: 1px solid var(--border-primary);
+    -webkit-box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+@media screen and (min-width: 769px) {
+    .top-navigation {
+        gap: 1rem;
+    }
+    .top-navigation .main-menu-toggle {
+        display: none;
+    }
+}
+
+.top-navigation-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    height: var(--top-navigation-height);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+@media screen and (min-width: 769px) {
+    .top-navigation-wrapper {
+        -webkit-box-flex: 0;
+            -ms-flex: 0;
+                flex: 0;
+        -webkit-box-align: initial;
+            -ms-flex-align: initial;
+                align-items: initial;
+    }
+}
+
+.top-navigation-main {
+    width: 100%;
+    display: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.show > .top-navigation-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.top-navigation-main .icon {
+    font-size: 1.25em;
+}
+@media screen and (min-width: 769px) {
+    .top-navigation-main {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        max-height: initial;
+        overflow: initial;
+        padding: initial;
+    }
+    .show > .top-navigation-main {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }
+    .top-navigation-main .main-nav {
+        margin-right: auto;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        max-width: 50%;
+        overflow-x: hidden;
+    }
+}
+
+.main-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.main-menu .button {
+    width: 100%;
+}
+@media screen and (min-width: 769px) {
+    .main-menu {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }
+}
+
+.top-navigation-main,
+.main-menu {
+    gap: 0.5rem;
+}
+
+.dropdown .dropdown-button {
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+@media screen and (min-width: 769px) {
+    .dropdown.active > .dropdown-menu {
+        display: block;
+    }
+}
+
+.dropdown-menu {
+    display: none;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.show > .dropdown-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.dropdown-menu li {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+}
+@media screen and (max-width: 769px) {
+    .dropdown-menu {
+        padding-left: 1rem;
+    }
+}
+@media screen and (min-width: 769px) {
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        background-color: var(--background-secondary);
+        border: 1px solid var(--border-primary);
+        border-radius: var(--button-radius);
+        -webkit-box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+                box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+    }
+}
+.dropdown-menu li {
+    overflow: hidden;
+}
+.dropdown-menu .active-menu-item, .dropdown-menu .active-menu-item:hover {
+    border: 1px solid var(--border-primary);
+}
+.dropdown-menu .button {
+    width: 100%;
+}
+
+.icon-login {
+    color: hsl(120deg, 100%, 30%);
+}
+
+.icon-app_registration {
+    color: hsl(214deg, 100%, 70%);
+}
+
+.icon-language {
+    color: hsl(51deg, 30%, 50%);
+}
+
+.icon-light_mode {
+    color: hsl(56deg, 100%, 45%);
+}
+
+.icon-dark_mode {
+    color: hsl(0deg, 0%, 60%);
+}
+
+button,
+.button {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.button {
+    --button-color: var(--text-primary);
+    --button-height: 2rem;
+    --button-padding: 0.25rem;
+    background-color: transparent;
+    height: var(--button-height);
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--button-radius, 6px);
+    padding: var(--button-padding);
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    line-height: 1px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0.25rem;
+}
+.button:focus, .button:hover {
+    background-color: var(--button-background-hover);
+}
+.button:focus {
+    border: 1px solid var(--border-primary);
+    -webkit-box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.main-menu-toggle .icon {
+    font-size: 1.5em;
+}
+
+.load .light, .load .dark {
+    -webkit-transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.article-actions-container {
+    background-color: var(--background-secondary);
+    border-bottom: 1px solid var(--border-primary);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: var(--article-actions-height);
+}
+
+.auth-form {
+    width: 100%;
+    max-width: calc(21rem + 2px);
+    margin: 0 auto;
+}
+.auth-form .logo {
+    display: block;
+    text-align: center;
+    padding: 2rem 0;
+}
+.auth-form-header {
+    margin-top: 1rem;
+    text-align: center;
+}
+.auth-form-header h1 {
+    font-size: 1.25rem;
+}
+.auth-form .flash-container {
+    margin-top: 1rem;
+}
+.auth-form .flash {
+    padding: 1rem;
+    border-radius: var(--input-radius);
+}
+.auth-form .flash-notice {
+    background-color: var(--canvas-notice);
+    border: 1px solid var(--border-notice);
+}
+.auth-form .flash-error {
+    background-color: var(--canvas-error);
+    border: 1px solid var(--border-error);
+}
+.auth-form-body {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border-form);
+    border-radius: var(--input-radius);
+    background-color: var(--canvas-form);
+}
+.auth-form-body input[type=submit] {
+    width: 100%;
+    height: 2.5rem;
+    margin-top: 1rem;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: hsl(0deg, 0%, 100%);
+    background-color: hsl(120deg, 25%, 55%);
+    border: none;
+    border-radius: var(--input-radius);
+}
+.load .auth-form-body input[type=submit] {
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+.auth-form-body input[type=submit]:hover, .auth-form-body input[type=submit]:focus {
+    background-color: hsl(120deg, 25%, 51%);
+}
+.auth-form-body input[disabled], .auth-form-body input[disabled]:hover {
+    cursor: not-allowed;
+    background-color: hsl(120deg, 25%, 71%);
+}
+
+.standard-form {
+    width: 100%;
+    max-width: calc(21rem + 2px);
+    margin: 0 auto;
+}
+.standard-form .logo {
+    display: block;
+    text-align: center;
+    padding: 2rem 0;
+}
+.standard-form-header {
+    margin-top: 1rem;
+    text-align: center;
+}
+.standard-form-header h1 {
+    font-size: 1.25rem;
+}
+.standard-form .flash-container {
+    margin-top: 1rem;
+}
+.standard-form .flash {
+    padding: 1rem;
+    border-radius: var(--input-radius);
+}
+.standard-form .flash-notice {
+    background-color: var(--canvas-notice);
+    border: 1px solid var(--border-notice);
+}
+.standard-form .flash-error {
+    background-color: var(--canvas-error);
+    border: 1px solid var(--border-error);
+}
+.standard-form-body {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border-form);
+    border-radius: var(--input-radius);
+    background-color: var(--canvas-form);
+}
+.standard-form-body input[type=submit] {
+    width: 100%;
+    height: 2.5rem;
+    margin-top: 1rem;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: hsl(0deg, 0%, 100%);
+    background-color: hsl(120deg, 25%, 55%);
+    border: none;
+    border-radius: var(--input-radius);
+}
+.load .standard-form-body input[type=submit] {
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+.standard-form-body input[type=submit]:hover, .standard-form-body input[type=submit]:focus {
+    background-color: hsl(120deg, 25%, 51%);
+}
+.standard-form-body input[disabled], .standard-form-body input[disabled]:hover {
+    cursor: not-allowed;
+    background-color: hsl(120deg, 25%, 71%);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: inline-block;
+    text-align: left;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+.form-group .toggle-password {
+    display: inline-block;
+    position: absolute;
+    top: 0.2em;
+    right: 0;
+    font-size: 0.8em;
+}
+.form-group .help-block {
+    display: block;
+    text-align: left;
+    font-size: 0.75rem;
+    color: hsl(0deg, 79%, 69%);
+    margin-top: 0.25rem;
+}
+
+.form-control {
+    position: relative;
+    background-color: var(--background-primary);
+    border-radius: var(--input-radius);
+}
+.form-control input[type=text], .form-control input[type=password], .form-control textarea {
+    display: inline-block;
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid var(--border-form);
+    border-radius: var(--input-radius);
+    padding: 0.25rem 2rem;
+    color: inherit;
+    background-color: inherit;
+}
+.load .form-control input[type=text], .load .form-control input[type=password], .load .form-control textarea {
+    -webkit-transition: border-color 0.2s, -webkit-box-shadow 0.2s;
+    transition: border-color 0.2s, -webkit-box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+}
+.form-control > textarea {
+    height: 10rem;
+    display: block !important;
+    resize: none;
+}
+.form-control input[type=text]:focus, .form-control input[type=password]:focus, .form-control > textarea:focus {
+    border: 1px solid var(--border-form-active);
+    -webkit-box-shadow: 0 0 0.5rem 0 var(--border-form-active);
+            box-shadow: 0 0 0.5rem 0 var(--border-form-active);
+}
+.form-control::before, .form-control::after {
+    position: absolute;
+    height: 100%;
+    text-align: center;
+    font-family: "Material Icons";
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.form-control.message::before, .form-control.message::after {
+    top: 0;
+    height: 2rem;
+}
+.form-control::before {
+    left: 0;
+    width: 2rem;
+    font-size: 1.25rem;
+    border-radius: var(--input-radius) 0 0 var(--input-radius);
+    color: #c5c5c5;
+}
+.load .form-control::before {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+.form-control::after {
+    right: 0;
+    width: 2rem;
+    font-size: 1.25rem;
+    border-radius: 0 var(--input-radius) var(--input-radius) 0;
+}
+.form-control:focus-within:before {
+    color: var(--border-form-active);
+}
+.form-control.bg:before {
+    background-color: hsl(0deg, 0%, 77%);
+    color: hsl(0deg, 0%, 100%);
+}
+.form-control.bg:focus-within:before {
+    background-color: var(--border-form-active);
+    color: hsl(0deg, 0%, 100%);
+}
+.dark .form-control.bg:before {
+    color: hsl(0deg, 0%, 0%);
+}
+.dark .form-control.bg:focus-within:before {
+    color: hsl(0deg, 0%, 0%);
+}
+.form-control.email:before {
+    content: "\e0be";
+}
+.form-control.username:before {
+    content: "\e7fd";
+}
+.form-control.password:before, .form-control.password-confirmation:before {
+    content: "\f042";
+}
+.form-control.subject:before {
+    content: "\e8d2";
+}
+.form-control.message:before {
+    content: "\e0c9";
+}
+.form-control.success:after {
+    content: "\e86c";
+    color: hsl(120deg, 25%, 55%);
+}
+.form-control.failure:after {
+    content: "\e000";
+    color: hsl(0deg, 79%, 69%);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: inherit;
+    caret-color: inherit;
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff;
+    caret-color: #ffffff;
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--background-primary) inset !important;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--text-primary) !important;
+}
+
+:root {
+    color-scheme: dark light;
+    --max-width: 1100px;
+    --gutter: 1rem;
+    --top-navigation-height: 4rem;
+    --logo-font-family: "rubikglitch";
+    --article-actions-height: 2rem;
+    --icon-size: 1.5rem;
+    --button-radius: 0.25rem;
+    --input-radius: 0.25rem;
+}

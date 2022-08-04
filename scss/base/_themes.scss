@@ -1,0 +1,74 @@
+@use '../abstracts' as *;
+
+@mixin light-theme {
+    --text-primary: #{$theme-light-text-primary};
+    --text-secondary: #{$theme-light-text-secondary};
+    --text-link: #{$theme-light-text-link};
+    --background-primary: #{$theme-light-background-primary};
+    --background-secondary: #{$theme-light-background-secondary};
+    --border-primary: #{$theme-light-border-primary};
+    --border-secondary: #{$theme-light-border-secondary};
+    --icon-primary: #{$theme-light-icon-primary};
+    --button-background-hover: #{$theme-light-button-background-hover};
+    --logo-primary: #{$theme-light-logo-primary};
+    --logo-secondary: #{$theme-light-logo-secondary};
+    --logo-underscore: #{$theme-light-logo-underscore};
+    --link-primary: #{$theme-light-link-primary};
+    --link-visited-primary: #{$theme-light-link-visited-primary};
+    --link-hover-primary: #{$theme-light-link-hover-primary};
+    --border-form: #{$theme-light-border-form};
+    --canvas-form: #{$theme-light-canvas-form};
+    --canvas-notice: #{$theme-light-canvas-notice};
+    --canvas-error: #{$theme-light-canvas-error};
+    --border-notice: #{$theme-light-border-notice};
+    --border-error: #{$theme-light-border-error};
+
+    --border-form-active: hsla(221, 43%, 47%, 0.7);
+}
+
+@mixin dark-theme {
+    --text-primary: #{$theme-dark-text-primary};
+    --text-secondary: #{$theme-dark-text-secondary};
+    --text-link: #{$theme-dark-text-link};
+    --background-primary: #{$theme-dark-background-primary};
+    --background-secondary: #{$theme-dark-background-secondary};
+    --border-primary: #{$theme-dark-border-primary};
+    --border-secondary: #{$theme-dark-border-secondary};
+    --icon-primary: #{$theme-dark-icon-primary};
+    --button-background-hover: #{$theme-dark-button-background-hover};
+    --logo-primary: #{$theme-dark-logo-primary};
+    --logo-secondary: #{$theme-dark-logo-secondary};
+    --logo-underscore: #{$theme-dark-logo-underscore};
+    --link-primary: #{$theme-dark-link-primary};
+    --link-visited-primary: #{$theme-dark-link-visited-primary};
+    --link-hover-primary: #{$theme-dark-link-hover-primary};
+    --border-form: #{$theme-dark-border-form};
+    --canvas-form: #{$theme-dark-canvas-form};
+    --canvas-notice: #{$theme-dark-canvas-notice};
+    --canvas-error: #{$theme-dark-canvas-error};
+    --border-notice: #{$theme-dark-border-notice};
+    --border-error: #{$theme-dark-border-error};
+
+    --border-form-active: hsla(221, 43%, 47%, 0.7);
+}
+
+:root,
+.light {
+    @include light-theme;
+}
+
+.dark {
+    @include dark-theme;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        @include light-theme;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        @include dark-theme;
+    }
+}

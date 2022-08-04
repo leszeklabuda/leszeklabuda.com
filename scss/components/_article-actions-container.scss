@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+.article-actions-container {
+    background-color: var(--background-secondary);
+    border-bottom: 1px solid var(--border-primary);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    height: var(--article-actions-height);
+}

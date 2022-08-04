@@ -1,0 +1,34 @@
+// NIE UZYWANE
+
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:math';
+// @use 'breakpoints' as *;
+$breakpoints: (
+    small: 18rem,
+    medium: 30rem,
+    large: 64rem,
+    extra-large: 90rem
+);
+
+@mixin media-min($size) {
+    @if map.has-key($breakpoints, $size) {
+        $breakpoint: map.get($breakpoints, $size);
+        @media screen and (min-width: $breakpoint) {
+            @content;
+        }
+    }
+    @else if meta.type-of($size) == number {
+        @if math.is-unitless($size) {
+            @error 'invalid type of $size';
+        }
+        @else {
+            @media screen and (min-width: $size) {
+                @content;
+            }
+        }
+    }
+    @else {
+        @error 'The keyword #{$size} is not in the $breakpoints';
+    }
+}

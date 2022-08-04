@@ -1,0 +1,20 @@
+@use 'abstracts' as *;
+@use 'base' as *;
+@use 'layouts' as *;
+@use 'components' as *;
+
+:root {
+    color-scheme: dark light;
+
+    // --max-width: 1440px;
+    --max-width: 1100px;
+    --gutter: 1rem;
+    --top-navigation-height: 4rem;
+    --logo-font-family: "rubikglitch";
+
+
+    --article-actions-height: 2rem;
+    --icon-size: 1.5rem;
+    --button-radius : 0.25rem;
+    --input-radius : 0.25rem;
+}

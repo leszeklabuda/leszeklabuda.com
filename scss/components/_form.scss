@@ -1,0 +1,355 @@
+@use '../abstracts' as *;
+
+// Authentication form
+.auth-form {
+    width: 100%;
+    max-width: calc(21rem + 2px); // recaptcha 304px + 2x(padding + border)
+    margin: 0 auto;
+
+    & .logo {
+        display: block;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    &-header {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    &-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .flash-container {
+        margin-top: 1rem;
+    }
+
+    .flash {
+        padding: 1rem;
+        border-radius: var(--input-radius);
+    }
+
+    .flash-notice {
+        background-color: var(--canvas-notice);
+        border: 1px solid var(--border-notice);
+    }
+
+    .flash-error {
+        background-color: var(--canvas-error);
+        border: 1px solid var(--border-error);
+    }
+
+    &-body {
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--border-form);
+        border-radius: var(--input-radius);
+        background-color: var(--canvas-form);
+
+        & input[type="submit"] {
+            width: 100%;
+            height: 2.5rem;
+            margin-top: 1rem;
+            padding: 0.25rem 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            color: hsl(0, 0%, 100%);
+            background-color: hsl(120, 25%, 55%);
+            border: none;
+            border-radius: var(--input-radius);
+
+            .load & {
+                transition: background-color 0.2s;
+            }
+        }
+
+        & input[type="submit"]:hover,
+        & input[type="submit"]:focus {
+            background-color: hsl(120, 25%, 51%);
+        }
+
+        & input[disabled],
+        & input[disabled]:hover {
+            cursor: not-allowed;
+            background-color: hsl(120, 25%, 71%);
+            // background-color: hsl(199, 13%, 58%);
+        }
+    }
+}
+
+// Standard form
+.standard-form {
+    width: 100%;
+    max-width: calc(21rem + 2px); // recaptcha 304px + 2x(padding + border)
+    margin: 0 auto;
+
+    & .logo {
+        display: block;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    &-header {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    &-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .flash-container {
+        margin-top: 1rem;
+    }
+
+    .flash {
+        padding: 1rem;
+        border-radius: var(--input-radius);
+    }
+
+    .flash-notice {
+        background-color: var(--canvas-notice);
+        border: 1px solid var(--border-notice);
+    }
+
+    .flash-error {
+        background-color: var(--canvas-error);
+        border: 1px solid var(--border-error);
+    }
+
+    &-body {
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--border-form);
+        border-radius: var(--input-radius);
+        background-color: var(--canvas-form);
+
+        & input[type="submit"] {
+            width: 100%;
+            height: 2.5rem;
+            margin-top: 1rem;
+            padding: 0.25rem 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            color: hsl(0, 0%, 100%);
+            background-color: hsl(120, 25%, 55%);
+            border: none;
+            border-radius: var(--input-radius);
+
+            .load & {
+                transition: background-color 0.2s;
+            }
+        }
+
+        & input[type="submit"]:hover,
+        & input[type="submit"]:focus {
+            background-color: hsl(120, 25%, 51%);
+        }
+
+        & input[disabled],
+        & input[disabled]:hover {
+            cursor: not-allowed;
+            background-color: hsl(120, 25%, 71%);
+            // background-color: hsl(199, 13%, 58%);
+        }
+    }
+}
+
+// Common to form
+.form-group {
+    position: relative;
+    margin-bottom: 1rem;
+
+    & label {
+        display: inline-block;
+        text-align: left;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    & .toggle-password {
+        display: inline-block;
+        position: absolute;
+        top: 0.2em;
+        right: 0;
+        font-size: 0.8em;
+    }
+
+    & .help-block {
+        display: block;
+        text-align: left;
+        font-size: 0.75rem;
+        color: hsl(0, 79%, 69%);
+        margin-top: 0.25rem;
+    }
+}
+
+.form-control {
+    position: relative;
+    background-color: var(--background-primary);
+    border-radius: var(--input-radius);
+
+    & input[type="text"],
+    & input[type="password"],
+    & textarea {
+        display: inline-block;
+        width: 100%;
+        height: 2rem;
+        font-size: 1rem;
+        outline: none;
+        border: 1px solid var(--border-form);
+        border-radius: var(--input-radius);
+        padding: 0.25rem 2rem;
+        color: inherit;
+        background-color: inherit;
+
+        .load & {
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+    }
+
+    & > textarea {
+        height: 10rem;
+        display: block !important; // eliminates the 4px bottom margin
+        resize: none;
+    }
+
+    & input[type="text"]:focus,
+    & input[type="password"]:focus,
+    & > textarea:focus {
+        border: 1px solid var(--border-form-active);
+        box-shadow: 0 0 0.5rem 0 var(--border-form-active);
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        height: 100%;
+        text-align: center;
+        font-family: "Material Icons";
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &.message::before,
+    &.message::after {
+        top: 0;
+        height: 2rem;
+    }
+
+    &::before {
+        left: 0;
+        width: 2rem;
+        font-size: 1.25rem;
+        border-radius: var(--input-radius) 0 0 var(--input-radius);
+        color: #c5c5c5;
+
+        .load & {
+            transition: color 0.2s;
+        }
+    }
+
+    &::after {
+        right: 0;
+        width: 2rem;
+        font-size: 1.25rem;
+        border-radius: 0 var(--input-radius) var(--input-radius) 0;
+    }
+
+    &:focus-within:before {
+        color: var(--border-form-active);
+    }
+
+    &.bg:before {
+        background-color: hsl(0, 0%, 77%);
+        color: hsl(0, 0%, 100%);
+    }
+
+    &.bg:focus-within:before {
+        background-color: var(--border-form-active);
+        color: hsl(0, 0%, 100%);
+    }
+
+    .dark &.bg:before {
+        color: hsl(0, 0%, 0%);
+    }
+
+    .dark &.bg:focus-within:before {
+        color: hsl(0, 0%, 0%);
+    }
+
+    &.email:before {
+        content: '\e0be';
+    }
+
+    &.username:before {
+        content: '\e7fd';
+    }
+
+    &.password:before,
+    &.password-confirmation:before {
+        content: '\f042';
+    }
+
+    &.subject:before {
+        content: '\e8d2';
+    }
+
+    &.message:before {
+        content: '\e0c9';
+    }
+
+    &.success:after {
+        content: '\e86c';
+        color: hsl(120, 25%, 55%);
+    }
+
+    &.failure:after {
+        content: '\e000';
+        color: hsl(0, 79%, 69%);
+    }
+
+    // &+span {
+    //     display: block;
+    //     text-align: left;
+    //     font-size: 0.75rem;
+    //     color: #ee7070;
+    //     margin-top: 0.25rem;
+    // }
+}
+
+// Change Autocomplete styles in Chrome
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: inherit;
+    caret-color: inherit;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff;
+    caret-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+// Change background color in autofill textbox
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--background-primary) inset !important;
+}
+
+// Change text color in autofill textbox
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--text-primary) !important;
+}

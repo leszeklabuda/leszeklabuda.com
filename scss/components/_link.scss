@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+.link {
+    color: var(--link-primary);
+
+    &:visited {
+        color: var(--link-visited-primary);
+    }
+
+    &:focus,
+    &:hover {
+        color: var(--link-hover-primary);
+        border-bottom: 2px solid var(--link-hover-primary);
+    }
+
+    &.strong {
+        font-weight: bold;
+    }
+}
+
+.link-container {
+    margin: 1rem auto;
+    // text-align: center;
+}

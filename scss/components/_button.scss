@@ -1,0 +1,41 @@
+button,
+.button {
+    appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.button {
+    --button-color: var(--text-primary);
+    --button-height: 2rem;
+    --button-padding: 0.25rem;
+
+    background-color: transparent;
+    height: var(--button-height);
+    flex-shrink: 0;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--button-radius, 6px);
+    padding: var(--button-padding);
+
+    display: inline-flex;
+    line-height: 1px;
+    align-items: center;
+    gap: 0.25rem;
+
+    &:focus,
+    &:hover {
+        background-color: var(--button-background-hover);
+    }
+
+    &:focus {
+        border: 1px solid var(--border-primary);
+        box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
+    }
+}
+
+.main-menu-toggle .icon {
+    font-size: 1.5em;
+}
