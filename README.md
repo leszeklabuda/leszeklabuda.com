@@ -1,3 +1,17 @@
+# Introdution
+
+## About this project
+
+This is the source code for my own website [https://leszeklabuda.com/](https://leszeklabuda.com/).
+
+For the backend I use Codeigniter 4, php 7.4 and MySQL 8.0 database. On the front side, I use the DART SASS compiler to automatically generate CSS3 styles. The website is powered by a lot of javascript.
+
+I use SVG graphics and google fonts.
+
+All website functionality is provided for training purposes.
+
+The website is still under construction.
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
