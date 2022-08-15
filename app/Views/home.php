@@ -53,12 +53,13 @@
         .epoch-unix-timestamp p {
             text-align: center;
         }
+
         .epoch-unix-timestamp h1 {
             font-size: 1.5rem;
         }
+
         .epoch-unix-timestamp p.timestamp {
             font-size: 1.5rem;
-            /* font-weight: bold; */
             padding: 0.5rem;
             border: 1px solid gray;
             border-radius: 0.25rem;
@@ -70,13 +71,3 @@
 <?= $this->endSection() ?>
 
 <?php
-// $url = 'https://www.unixtimestamp.com/';
-
-// $url = 'https://www.timeanddate.com/time/aboututc.html';
-// $curl = curl_init();
-// curl_setopt($curl, CURLOPT_URL, $url);
-// curl_setopt($curl, CURLOPT_HEADER, 0);
-// curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-// $response = curl_exec($curl);
-// curl_close($curl);
-// echo $response;
