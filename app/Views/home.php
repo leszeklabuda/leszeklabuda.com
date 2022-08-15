@@ -23,7 +23,6 @@
                     const remoteTimestamp = await getRemoteTimestamp();
                     difference = localTimestamp - remoteTimestamp;
                     console.log(localTimestamp, remoteTimestamp, difference);
-                    await renderTimestamp(timestamp1, timestamp2);
                 } catch (e) {
 
                 }
