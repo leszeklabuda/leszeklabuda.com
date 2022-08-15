@@ -2,7 +2,7 @@
     <h1>Kursy średnie walut NBP</h1>
     <p class="date">Tabela z dnia: <span>---</span></p>
     <table class="exchange-rates"></table>
-    <p><em>Source: <a href="https://www.nbp.pl/" target="_blank">https://www.nbp.pl/</a></em></p>
+    <p><em>Source: <a href="http://api.nbp.pl/" target="_blank">http://api.nbp.pl/</a></em></p>
     <script>
         (async () => {
             await update();
